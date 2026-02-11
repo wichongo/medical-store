@@ -174,8 +174,9 @@ h2 {
 
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
 }
 
 .card {
@@ -185,6 +186,8 @@ h2 {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
     transition: 0.4s;
     text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 .card:hover {
@@ -192,8 +195,8 @@ h2 {
 }
 
 .card img {
-    width: 80%;
-    height: 200px;
+    width: 70%;
+    height: 170px;
     object-fit: contain;
     display: block;
     margin: 0 auto 15px auto;
@@ -389,4 +392,32 @@ footer {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+#marcas {
+    background: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.marcas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 40px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.marcas-grid img {
+    max-width: 120px;
+    margin: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: 0.3s ease;
+}
+
+.marcas-grid img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
 }
