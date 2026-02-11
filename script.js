@@ -10,13 +10,17 @@ function openProduct(product) {
         content = `
         <h2>Refrigerador RL-500</h2>
         <div class="gallery">
-            <img src="https://refrimed.com/wp-content/uploads/2018/09/LABORATORIO-e1580322650612.jpg">
+            <img src="https://www.frimed.it/content/images/prodotti/500x500/82_500x500-pn45v-es-rev02.jpg">
         </div>
-        <p><strong>Capacidad:</strong> 500L</p>
+        <p><strong>Capacidad:</strong> 450 Lt </p>
         <p><strong>Dimensiones:</strong> 180cm x 70cm x 60cm</p>
         <p><strong>Peso:</strong> 95kg</p>
-        <p><strong>Temperatura:</strong> 2°C a 8°C</p>
-        <button class="btn">Descargar Ficha Técnica (PDF)</button>
+        <p><strong>Temperatura:</strong> +2° + 12°</p>
+        <a href="assets/pdf/Refrigerador Frimed.pdf"
+        target="_blank"
+        class="btn">
+        Descargar Ficha Técnica (PDF)
+        </a>
         `;
     }
 
