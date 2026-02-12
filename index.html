@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Medical Store</title>
+
     <link rel="icon" type="image/png" sizes="32x32"
         href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfkW0JVnp_6GvMVII2UGbkS7CGytLT0mVTJQ&s">
     <link rel="icon" type="image/png" sizes="16x16"
@@ -14,17 +15,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css?v=1.1">
 
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
+    <!-- HEADER -->
     <header>
         <div class="container nav">
             <div class="logo">Medical Store</div>
@@ -39,6 +43,7 @@
 
     <main>
 
+        <!-- HERO -->
         <section class="hero" id="inicio">
             <div class="hero-content">
                 <h1>Equipos Médicos de Vanguardia</h1>
@@ -47,6 +52,7 @@
             </div>
         </section>
 
+        <!-- ABOUT -->
         <section id="about">
             <div class="container about">
                 <h2>Acerca de Nosotros</h2>
@@ -54,6 +60,7 @@
             </div>
         </section>
 
+        <!-- POR QUÉ ELEGIRNOS -->
         <section id="porque">
             <div class="container">
                 <h2>¿Por Qué Elegirnos?</h2>
@@ -88,6 +95,7 @@
             </div>
         </section>
 
+        <!-- ESTADÍSTICAS -->
         <section id="stats">
             <div class="container stats-container">
                 <div class="stat">
@@ -105,22 +113,28 @@
             </div>
         </section>
 
+        <!-- MARCAS -->
         <section id="marcas">
             <div class="container">
                 <h2>Marcas que Distribuimos</h2>
                 <div class="marcas-grid">
                     <img src="https://congresosefmsepr.es/burgos2019/wp-content/uploads/2019/05/logo-radiologia-rayos-x-electromedicina.jpg"
                         alt="Radiología">
-                    <img src="https://labhuset.no/wp-content/uploads/2023/12/memmert-logo-1.png" alt="Memmer">
+                    <img src="https://labhuset.no/wp-content/uploads/2023/12/memmert-logo-1.png"
+                        alt="Memmer">
                     <img src="https://images.seeklogo.com/logo-png/62/1/mindray-logo-png_seeklogo-624680.png"
                         alt="Mindray">
-                    <img src="https://greatcatalog.net/i/brand/382/draeger-c16.png" alt="Drager">
-                    <img src="https://lhsperu.com/wp-content/uploads/2022/08/BIOBASE.png" alt="Biobase">
-                    <img src="https://dmsswe.com/img/dms-logo-mobile.png" alt="DMS">
+                    <img src="https://greatcatalog.net/i/brand/382/draeger-c16.png"
+                        alt="Drager">
+                    <img src="https://lhsperu.com/wp-content/uploads/2022/08/BIOBASE.png"
+                        alt="Biobase">
+                    <img src="https://dmsswe.com/img/dms-logo-mobile.png"
+                        alt="DMS">
                 </div>
             </div>
         </section>
 
+        <!-- PRODUCTOS -->
         <section id="productos">
             <div class="container">
                 <h2>Nuestros Productos</h2>
@@ -132,7 +146,8 @@
                             alt="Refrigerador RL-500">
                         <h3>Refrigerador para laboratorios</h3>
                         <p class="price">$1,299</p>
-                        <button class="btn" onclick="openProduct('refrigerador')">Ver Detalles</button>
+                        <button class="btn"
+                            onclick="openProduct('refrigerador')">Ver Detalles</button>
                     </div>
 
                     <div class="card">
@@ -140,13 +155,15 @@
                             alt="Centrifugadora CF-3000">
                         <h3>Centrifugadora CF-3000</h3>
                         <p class="price">$899</p>
-                        <button class="btn" onclick="openProduct('centrifuga')">Ver Detalles</button>
+                        <button class="btn"
+                            onclick="openProduct('centrifuga')">Ver Detalles</button>
                     </div>
 
                 </div>
             </div>
         </section>
 
+        <!-- CONTACTO -->
         <section id="contacto">
             <div class="contact">
                 <h2>Contáctanos</h2>
@@ -156,15 +173,20 @@
                 <button class="btn">Enviar</button>
             </div>
         </section>
+
+        <!-- UBICACIÓN -->
         <section id="ubicacion">
-            <div class="cotainer">
+            <div class="container">
                 <h2>Ubicación</h2>
 
                 <div class="map-container">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.2953972741575!2d-77.028396!3d-12.091918499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c9b34eb691a9%3A0x64e177f366ad476f!2sInterseguro!5e0!3m2!1ses!2spe!4v1770670744259!5m2!1ses!2spe"
-                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                        width="400"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
                     </iframe>
                 </div>
             </div>
@@ -172,12 +194,12 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>© 2026 Equipos Médicos Perú</p>
         </div>
     </footer>
-
 
     <!-- MODAL -->
     <div id="productModal" class="modal">
@@ -189,13 +211,14 @@
 
     <!-- WhatsApp Float -->
     <a href="https://wa.me/51974467392?text=Hola,%20quiero%20más%20información%20sobre%20sus%20equipos%20médicos"
-        class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        class="whatsapp-float"
+        target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+            alt="WhatsApp">
     </a>
 
-
     <!-- JS -->
-    <script src="script.js?v=1.1"></script>
+    <script src="script.js"></script>
 
 </body>
 
