@@ -27,10 +27,11 @@ function openProduct(product) {
         <p><strong>Peso:</strong> 95kg</p>
         <p><strong>Temperatura:</strong> +2° +12°</p>
 
+        <div class="btn-center">
         <a href="assets/pdf/Refrigerador Frimed.pdf"
-            target="_blank"
-            class="btn">
-            Descargar Ficha Técnica (PDF)
+        target="_blank"
+        class="btn">
+        Descargar Ficha Técnica (PDF)
         </a>
         `;
     }
@@ -54,7 +55,12 @@ function openProduct(product) {
         <p><strong>Capacidad:</strong> 6 tubos</p>
         <p><strong>Peso:</strong> 12kg</p>
 
-        <button class="btn">Descargar Ficha Técnica (PDF)</button>
+        <div class="btn-center">
+        <a href="assets/pdf/Refrigerador Frimed.pdf"
+        target="_blank"
+        class="btn">
+        Descargar Ficha Técnica (PDF)
+        </a>
         `;
     }
 
@@ -187,3 +193,4 @@ function animateCounter(counter) {
 
     }, stepTime);
 }
+
