@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Conoce más sobre Medical Store Perú: más de 15 años distribuyendo equipos médicos certificados en todo el país.">
+    <title>Acerca de Nosotros | Medical Store Perú</title>
+
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfkW0JVnp_6GvMVII2UGbkS7CGytLT0mVTJQ&s">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=1.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav">
+            <div class="logo">Medical Store</div>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="about.html" class="active">Acerca</a>
+                <a href="productos.html">Productos</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ACERCA DE NOSOTROS -->
+        <section id="about">
+            <div class="container about">
+                <h2>Acerca de Nosotros</h2>
+                <p class="about-text">
+                    Somos distribuidores oficiales de marcas líderes mundiales como Mindray, Dräger, Memmert, Biobase y
+                    muchas más. Nuestro equipo de ingenieros biomédicos certificados ofrece instalación profesional,
+                    capacitación completa al personal y soporte técnico preventivo y correctivo en Lima y provincias.
+                    Trabajamos con instituciones públicas y privadas, universidades y laboratorios privados, entregando
+                    soluciones adaptadas a cada necesidad y presupuesto.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Medical Store Perú - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- MODAL (lo mantenemos por si acaso, aunque no se use aquí) -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/51974467392?text=Hola,%20quiero%20más%20información%20sobre%20sus%20equipos%20médicos"
+        class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Contactar por WhatsApp">
+    </a>
+
+    <script src="script.js?v=1.5"></script>
+</body>
+
+</html>

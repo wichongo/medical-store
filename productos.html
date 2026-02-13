@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Catálogo de equipos médicos: refrigeradores, centrífugas, monitores, analizadores y más. Precios y fichas técnicas disponibles.">
+    <title>Productos | Medical Store Perú</title>
+
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfkW0JVnp_6GvMVII2UGbkS7CGytLT0mVTJQ&s">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=1.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav">
+            <div class="logo">Medical Store</div>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="about.html">Acerca</a>
+                <a href="productos.html" class="active">Productos</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- PRODUCTOS -->
+        <section id="productos">
+            <div class="container">
+                <h2>Nuestros Productos</h2>
+
+                <div class="filtros">
+                    <button class="filtro-btn active" data-filter="all">Todos</button>
+                    <button class="filtro-btn" data-filter="refrigeracion">Refrigeración</button>
+                    <button class="filtro-btn" data-filter="laboratorio">Laboratorio</button>
+                </div>
+
+                <div class="products">
+                    <div class="products">
+                        <div class="card" data-category="refrigeracion">
+                            <span class="badge oferta">Oferta 20%</span>
+                            <img src="https://www.frimed.it/content/images/prodotti/500x500/82_500x500-pn45v-es-rev02.jpg"
+                                alt="Refrigerador para laboratorios Frimed PN45">
+                            <h3>Refrigerador para laboratorios</h3>
+                            <p class="price">$1,299</p>
+                            <button class="btn" onclick="openProduct('refrigerador')">Ver Detalles</button>
+                        </div>
+
+                        <div class="card" data-category="laboratorio">
+                            <span class="badge top">Nuevo</span>
+                            <img src="https://biosan.lv/media/products/main/lmc-3000-_baLfTce.png.1200x1200_q85.png"
+                                alt="Centrifugadora Biosan LMC-3000">
+                            <h3>Centrifugadora CF-3000</h3>
+                            <p class="price">$899</p>
+                            <button class="btn" onclick="openProduct('centrifuga')">Ver Detalles</button>
+                        </div>
+                        <div class="card" data-category="laboratorio">
+                            <span class="badge oferta">Oferta 15%</span>
+                            <img src="https://www.futmedcorp.com/wp-content/uploads/2017/06/01-01-1024x1024.jpg"
+                                alt="Monitor multiparámetro Philips">
+                            <h3>Monitor Multiparámetro MP-500</h3>
+                            <p class="price">$2,450</p>
+                            <button class="btn" onclick="openProduct('monitor')">Ver Detalles</button>
+                        </div>
+
+                        <div class="card" data-category="refrigeracion">
+                            <img src="https://www.biosoporteperu.com/wp-content/uploads/2021/08/xc-588l-1.jpg"
+                                alt="Refrigerador de sangre">
+                            <h3>Refrigerador de Sangre y Componentes 300L</h3>
+                            <p class="price">$3,800</p>
+                            <button class="btn" onclick="openProduct('sangre')">Ver Detalles</button>
+                        </div>
+
+                        <div class="card" data-category="laboratorio">
+                            <span class="badge nuevo">Nuevo 2025</span>
+                            <img src="https://faustlabscience.de/media/g0/cc/d9/1700687229/6256020_1.jpg?ts=1768991874"
+                                alt="Espectrofotómetro UV-Vis">
+                            <h3>Espectrofotómetro UV-Vis DR-3900</h3>
+                            <p class="price">$5,200</p>
+                            <button class="btn" onclick="openProduct('espectro')">Ver Detalles</button>
+                        </div>
+
+                        <div class="card" data-category="laboratorio">
+                            <img src="https://www.mindray.com/content/dam/xpace/en/products-solutions/products/laboratory-diagnostics/hematology/medium-test-volume/bc-6200/glp19-s3.jpg"
+                                alt="Analizador hematológico Mindray">
+                            <h3>Analizador Hematológico BC-6200</h3>
+                            <p class="price">$18,900</p>
+                            <button class="btn" onclick="openProduct('hematologico')">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        </div>
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Medical Store Perú - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/51974467392?text=Hola,%20quiero%20más%20información%20sobre%20sus%20equipos%20médicos"
+        class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Contactar por WhatsApp">
+    </a>
+
+    <script src="script.js?v=1.5"></script>
+</body>
+
+</html>
