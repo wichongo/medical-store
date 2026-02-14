@@ -443,6 +443,7 @@ nav a:hover {
     font-weight: 700;
     padding: 80;
 }
+
 @media (max-width: 768px) {
     #marcas h2 {
         font-size: 2.5rem;
@@ -468,7 +469,7 @@ nav a:hover {
     filter: grayscale(100%);
     opacity: 0.7;
     transition: 0.3s ease;
-    
+
 }
 
 .marcas-grid img:hover {
@@ -809,4 +810,45 @@ nav a.active::after {
     height: 3px;
     background: #FF8C00;
     border-radius: 3px;
+}
+
+/* LOGO CON TEXTO AL LADO */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* espacio entre logo y texto */
+}
+
+.logo-img {
+    height: 50px;
+    /* ajusta este número: 40px más pequeño, 70px más grande */
+    width: auto;
+    max-width: 200px;
+    /* evita que se estire si es muy ancho */
+    object-fit: contain;
+}
+
+.logo-text {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+    /* evita que baje de línea */
+}
+
+/* En móvil: logo arriba y texto abajo pa' que no se apriete */
+@media (max-width: 768px) {
+    .logo-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .logo-img {
+        height: 45px;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
 }
