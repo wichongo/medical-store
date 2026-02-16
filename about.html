@@ -8,22 +8,26 @@
         content="Conoce más sobre Medical Store Perú: más de 15 años distribuyendo equipos médicos certificados en todo el país.">
     <title>Acerca de Nosotros | Medical Store Perú</title>
 
-    <link rel="icon" href="favicon/favicon logos/favicon.ico?v=2" type="image/icon">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon logos/web-app-manifest-192x192.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon logos/logo 96x96.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/favicon logos/apple-touch-icon.png">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon logos/logo 96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/icono apple.png">
     <link rel="manifest" href="favicon/site.webmanifest">
 
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfkW0JVnp_6GvMVII2UGbkS7CGytLT0mVTJQ&s">
+    <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=1.5">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css?v=1.6">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
+    <!-- HEADER -->
     <header>
         <div class="container nav">
             <div class="logo-container">
@@ -32,7 +36,7 @@
             </div>
             <nav>
                 <a href="index.html">Inicio</a>
-                <a href="about.html">Acerca</a>
+                <a href="about.html" class="active">Acerca</a>
                 <!-- Menú desplegable para Productos -->
                 <div class="dropdown">
                     <a href="productos.html" class="dropbtn">Productos</a>
@@ -43,7 +47,6 @@
                         <a href="productos.html#analizadores">Analizadores</a>
                     </div>
                 </div>
-
                 <a href="contacto.html">Contacto</a>
             </nav>
         </div>
@@ -61,32 +64,37 @@
                     Trabajamos con instituciones públicas y privadas, universidades y laboratorios privados, entregando
                     soluciones adaptadas a cada necesidad y presupuesto.
                 </p>
-            </div>
-            <!-- VISIÓN Y MISIÓN -->
-            <div class="vision-mision">
-                <div class="vm-card">
-                    <h3>Nuestra Misión</h3>
-                    <p>Liderar soluciones tecnolólogicamente innovadoras enequpos y servicios médicos, superando las
-                        expectativas de nuestros clientes, contribuyendo eficientemente en la atención médica global.
-                    </p>
-                </div>
 
-                <div class="vm-card">
-                    <h3>Nuestra Visión</h3>
-                    <p>Consolidarnos como una empresa innovadora en equipos y servicios médicos, con tecnologías de la
-                        más alta calidad, contribuyendo a la excelencia en los servicios de salud.</p>
+                <!-- VISIÓN Y MISIÓN -->
+                <div class="vision-mision">
+                    <div class="vm-card">
+                        <h3>Nuestra Misión</h3>
+                        <p>Liderar soluciones tecnolólogicamente innovadoras en equipos y servicios médicos, superando
+                            las
+                            expectativas de nuestros clientes, contribuyendo eficientemente en la atención médica
+                            global.
+                        </p>
+                    </div>
+
+                    <div class="vm-card">
+                        <h3>Nuestra Visión</h3>
+                        <p>Consolidarnos como una empresa innovadora en equipos y servicios médicos, con tecnologías de
+                            la
+                            más alta calidad, contribuyendo a la excelencia en los servicios de salud.</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>© 2026 Medical Store Perú - Todos los derechos reservados</p>
         </div>
     </footer>
 
-    <!-- MODAL (lo mantenemos por si acaso, aunque no se use aquí) -->
+    <!-- MODAL (lo mantenemos por si acaso) -->
     <div id="productModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">×</span>
@@ -100,7 +108,8 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Contactar por WhatsApp">
     </a>
 
-    <script src="script.js?v=1.5"></script>
+    <!-- JS -->
+    <script src="script.js?v=1.6"></script>
 </body>
 
 </html>
