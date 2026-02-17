@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Contáctanos para cotizaciones, soporte o más información sobre equipos médicos en Perú.">
+    <meta name="description" content="Contáctanos para cotizaciones, soporte o más información sobre equipos médicos en Perú.">
     <title>Contacto | Medical Store Perú</title>
 
     <!-- Favicon -->
     <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon logos/logo 96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/favicon logos/icono apple.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="manifest" href="favicon/site.webmanifest">
 
     <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.css?v=1.6">
+    <link rel="stylesheet" href="styles.css?v=1.7">
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -56,27 +54,68 @@
         <!-- CONTACTO -->
         <section id="contacto">
             <div class="container">
-                <div class="contact">
-                    <h2>Contáctanos</h2>
-                    <form action="https://formspree.io/f/mjgeydvk" method="POST">
-                        <input type="text" name="nombre" placeholder="Nombre" required>
-                        <input type="email" name="correo" placeholder="Correo" required>
-                        <textarea name="mensaje" rows="4" placeholder="Mensaje" required></textarea>
-                        <button type="submit" class="btn">Enviar</button>
-                    </form>
-                </div>
-            </div>
-        </section>
+                <div class="contact-grid">
+                    <!-- Formulario a la izquierda -->
+                    <div class="contact-form">
+                        <h2>Envíanos un mensaje</h2>
+                        <form action="https://formspree.io/f/mjgeydvk" method="POST">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                            </div>
 
-        <!-- UBICACIÓN -->
-        <section id="ubicacion">
-            <div class="container">
-                <h2>Ubicación</h2>
-                <div class="map-container">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.2953972741575!2d-77.028396!3d-12.091918499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c9b34eb691a9%3A0x64e177f366ad476f!2sInterseguro!5e0!3m2!1ses!2spe!4v1770670744259!5m2!1ses!2spe"
-                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <div class="form-group">
+                                <label for="correo">Correo Electrónico</label>
+                                <input type="email" id="correo" name="correo" placeholder="tu@correo.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Describe tu consulta o el equipo que necesitas..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn primary btn-center">Enviar Mensaje</button>
+                        </form>
+                    </div>
+
+                    <!-- Info de contacto y mapa a la derecha -->
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <h3>Información de Contacto</h3>
+                            <ul class="contact-list">
+                                <li>
+                                    <i class="fas fa-phone-alt icon"></i>
+                                    <strong>Teléfono</strong>
+                                    <span>+51 999 999 999</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope icon"></i>
+                                    <strong>Email</strong>
+                                    <span>ventas@medicalstore.pe</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-map-marker-alt icon"></i>
+                                    <strong>Dirección</strong>
+                                    <span>Lima, Perú</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="map-card">
+                            <h3>Ubicación</h3>
+                            <div class="map-container">
+                               <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.2953972741575!2d-77.028396!3d-12.091918499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c9b34eb691a9%3A0x64e177f366ad476f!2sInterseguro!5e0!3m2!1ses!2spe!4v1770670744259!5m2!1ses!2spe" 
+                                width="800%" 
+                                height="600%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -90,13 +129,11 @@
     </footer>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/51974467392?text=Hola,%20quiero%20más%20información%20sobre%20sus%20equipos%20médicos"
-        class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/51974467392?text=Hola,%20quiero%20más%20información%20sobre%20sus%20equipos%20médicos" class="whatsapp-float" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Contactar por WhatsApp">
     </a>
 
     <!-- JS -->
-    <script src="script.js?v=1.6"></script>
+    <script src="script.js?v=1.7"></script>
 </body>
-
 </html>
