@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MEDICAL STORE PERÚ - Lógica del sitio
+   MEDICAL HEALTHCARE - Lógica del sitio
    Requiere cargar antes:  js/productos-data.js (en todas las páginas)
    ========================================================================== */
 
@@ -21,9 +21,32 @@ function buscarProducto(id) {
    así una categoría nueva aparece sola en el menú de todas las páginas.
    -------------------------------------------------------------------------- */
 document.querySelectorAll(".dropdown-content").forEach((menu) => {
-    menu.innerHTML = Object.entries(CATEGORIAS)
+    menu.innerHTML = '<a href="productos.html">Todos los productos</a>' + Object.entries(CATEGORIAS)
         .map(([clave, nombre]) => `<a href="productos.html#${clave}">${nombre}</a>`)
         .join("");
+});
+
+/* Menú accesible con ratón, teclado y pantalla táctil. */
+document.querySelectorAll('.dropdown').forEach((dropdown) => {
+    const button = dropdown.querySelector('.dropbtn');
+    const menu = dropdown.querySelector('.dropdown-content');
+    const setOpen = (open) => {
+        button.setAttribute('aria-expanded', String(open));
+        menu.hidden = !open;
+    };
+    button.addEventListener('click', () => setOpen(menu.hidden));
+    dropdown.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !menu.hidden) {
+            setOpen(false);
+            button.focus();
+        }
+    });
+    dropdown.addEventListener('focusout', (event) => {
+        if (!dropdown.contains(event.relatedTarget)) setOpen(false);
+    });
+    document.addEventListener('click', (event) => {
+        if (!dropdown.contains(event.target) || event.target.closest('.dropdown-content a')) setOpen(false);
+    });
 });
 
 /* --------------------------------------------------------------------------
@@ -60,7 +83,7 @@ function crearModalHTML(p) {
 
     return `
         <p class="modal-marca">${MOSTRAR_MARCA ? p.marca + " · " : ""}${CATEGORIAS[p.categoria]}</p>
-        <h2>${p.nombre}</h2>
+        <h2 id="product-title">${p.nombre}</h2>
         <p class="modal-modelo">${p.modeloDetalle || "Modelo " + p.modelo}</p>
         <img class="modal-img" src="${p.imagen}" alt="${p.nombre} ${p.marca} ${p.modelo}">
         <p class="modal-resumen">${p.resumen}</p>
@@ -73,7 +96,7 @@ function crearModalHTML(p) {
 
         <div class="btn-center">
             <a href="${p.ficha}" target="_blank" rel="noopener" class="btn">
-                <i class="fa-solid fa-file-pdf"></i> Descargar Ficha Técnica (PDF)
+                <i class="fa-solid fa-file-pdf"></i> Ver ficha técnica (PDF)
             </a>
             <a href="${enlaceWhatsApp(mensaje)}" target="_blank" rel="noopener" class="btn secondary-dark">
                 <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
@@ -87,14 +110,19 @@ function abrirModal(id) {
     if (!producto || !modal) return;
 
     modalBody.innerHTML = crearModalHTML(producto);
-    modal.style.display = "flex";
+    modal.showModal();
+    modal.querySelector(".modal-content").scrollTop = 0;
     document.body.style.overflow = "hidden";
 }
 
 function cerrarModal() {
-    if (!modal) return;
-    modal.style.display = "none";
+    if (!modal || !modal.open) return;
+    modal.close();
     document.body.style.overflow = "";
+}
+
+if (modal) {
+    modal.addEventListener('close', () => { document.body.style.overflow = ''; });
 }
 
 /* Un solo listener para todos los botones "Ver Detalles" (presentes y futuros) */
@@ -134,6 +162,7 @@ function aplicarFiltro(categoria) {
 
     contenedorFiltros.querySelectorAll(".filtro-btn").forEach((btn) => {
         btn.classList.toggle("active", btn.dataset.filter === categoria);
+        btn.setAttribute("aria-pressed", String(btn.dataset.filter === categoria));
     });
 }
 
@@ -151,14 +180,14 @@ if (contenedorCatalogo && contenedorFiltros) {
         aplicarFiltro(btn.dataset.filter);
         /* Mantiene la URL sincronizada para que el menú "Productos" siempre funcione */
         const hash = btn.dataset.filter === "all" ? "" : `#${btn.dataset.filter}`;
-        history.replaceState(null, "", window.location.pathname + hash);
+        history.replaceState(null, "", window.location.pathname + window.location.search + hash);
     });
 
     /* Filtro inicial según el menú (productos.html#calentadores); también
        reacciona si se cambia el enlace estando ya en la página. */
     const filtroDesdeURL = () => {
         const hash = window.location.hash.replace("#", "");
-        aplicarFiltro(hash in CATEGORIAS ? hash : "all");
+        aplicarFiltro(Object.hasOwn(CATEGORIAS, hash) ? hash : "all");
     };
     filtroDesdeURL();
     window.addEventListener("hashchange", filtroDesdeURL);
@@ -169,6 +198,10 @@ if (contenedorCatalogo && contenedorFiltros) {
    -------------------------------------------------------------------------- */
 function animarContador(elemento) {
     const meta = Number(elemento.dataset.target);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        elemento.textContent = meta;
+        return;
+    }
     const duracion = 2000;
     const paso = 20;
     const incremento = meta / (duracion / paso);

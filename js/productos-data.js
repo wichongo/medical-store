@@ -18,7 +18,7 @@
 const CATEGORIAS = {
     refrigeracion: "Refrigeración",
     calentadores: "Calentadores de Sangre",
-    esterilizadores: "Esterilizadores de Sobremesa para Uso Dental y Veterinaria"
+    esterilizadores: "Esterilizadores de sobremesa"
 };
 
 /* true  = las cards y el modal muestran la marca (ej. "Frimed · PN45V")

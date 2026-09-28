@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css?v=2.1">
+    <link rel="stylesheet" href="css/styles.css?v=2.2">
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -34,13 +34,13 @@
                 <img src="images/logo-medical.png" alt="Logo Medical Healthcare" class="logo-img">
                 <span class="logo-text">Medical Healthcare</span>
             </div>
-            <nav>
+            <nav aria-label="Navegación principal">
                 <a href="index.html">Inicio</a>
-                <a href="about.html" class="active">Acerca</a>
+                <a href="about.html" class="active" aria-current="page">Acerca</a>
                 <!-- Menú desplegable para Productos -->
                 <div class="dropdown">
-                    <a href="productos.html" class="dropbtn">Productos</a>
-                    <div class="dropdown-content"><!-- generado por js/main.js --></div>
+                    <button type="button" class="dropbtn" aria-expanded="false" aria-controls="menu-productos">Productos <span aria-hidden="true">▾</span></button>
+                    <div class="dropdown-content" id="menu-productos" hidden><!-- generado por js/main.js --></div>
                 </div>
                 <a href="contacto.html">Contacto</a>
             </nav>
@@ -51,7 +51,7 @@
         <!-- ACERCA DE NOSOTROS -->
         <section id="about">
             <div class="container about">
-                <h2>Acerca de Nosotros</h2>
+                <h1 class="page-title">Acerca de Nosotros</h1>
                 <p class="about-text">
                     Somos distribuidores de marcas líderes a nivel mundial en equipos médicos. Nuestro equipo de ingenieros biomédicos certificados ofrece instalación profesional,
                     capacitación completa al personal y soporte técnico preventivo y correctivo en Lima y provincias.
@@ -88,16 +88,16 @@
         </div>
     </footer>
 
-    
+
     <!-- WhatsApp Float -->
     <a href="https://wa.me/51942736112?text=Hola,%20quiero%20más%20información%20sobre%20sus%20equipos%20médicos"
-        class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Contactar por WhatsApp">
+        class="whatsapp-float" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" fill="none"><path d="M27 15.5a11 11 0 0 1-16.3 9.6L5 27l1.8-5.6A11 11 0 1 1 27 15.5Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M12 9.5c-.5-.6-1.5-.4-2 .3-1.4 2.1.1 5.2 2.8 7.9s5.8 4.2 7.9 2.8c.7-.5.9-1.5.3-2l-2.1-1.6c-.4-.3-.8-.2-1.1.1l-1 1c-1.8-.8-3.1-2.1-3.9-3.9l1-1c.3-.3.4-.7.1-1.1Z" fill="white"/></svg>
     </a>
 
     <!-- JS -->
-    <script src="js/productos-data.js?v=2.1"></script>
-    <script src="js/main.js?v=2.1"></script>
+    <script src="js/productos-data.js?v=2.2"></script>
+    <script src="js/main.js?v=2.2"></script>
 </body>
 
 </html>
