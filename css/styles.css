@@ -808,11 +808,13 @@ footer p {
     position: absolute;
     background-color: #1c6ea4;
     min-width: 200px;
+    width: max-content;
+    max-width: min(340px, 90vw);   /* nombres largos de categoría se ajustan en 2 líneas */
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 8px;
     overflow: hidden;
-    left: 0;
+    right: 0;                      /* se abre hacia la izquierda: no se sale de la pantalla */
 }
 
 .dropdown-content a {
@@ -822,6 +824,7 @@ footer p {
     display: block;
     transition: 0.3s;
     width: 100%;
+    line-height: 1.35;
 }
 
 .dropdown-content a:hover {
@@ -831,6 +834,18 @@ footer p {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+/* En móvil el menú Productos se centra respecto a la pantalla
+   (va después de las reglas base para poder sobrescribirlas) */
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: fixed;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90vw;
+    }
 }
 
 /* VISIÓN Y MISIÓN */

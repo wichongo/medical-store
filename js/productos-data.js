@@ -9,13 +9,16 @@
      1. Copia su foto a  images/productos/  (ej. images/productos/xx.webp)
      2. Copia su ficha técnica a  assets/pdf/  (ej. assets/pdf/marca-xx.pdf)
      3. Agrega un objeto nuevo en PRODUCTOS siguiendo el formato de abajo.
+        (Campo opcional "modeloDetalle": texto que reemplaza a "Modelo XXX"
+        bajo el título del modal, útil cuando una ficha cubre varios modelos.)
    ========================================================================== */
 
 /* Categorías (clave -> nombre visible). Las claves se usan en los filtros
    y en el menú "Productos" (productos.html#clave). */
 const CATEGORIAS = {
     refrigeracion: "Refrigeración",
-    calentadores: "Calentadores"
+    calentadores: "Calentadores de Sangre",
+    esterilizadores: "Esterilizadores de Sobremesa para Uso Dental y Veterinaria"
 };
 
 /* true  = las cards y el modal muestran la marca (ej. "Frimed · PN45V")
@@ -23,7 +26,7 @@ const CATEGORIAS = {
 const MOSTRAR_MARCA = true;
 
 /* IDs de los equipos que se muestran en "Productos Destacados" (inicio). */
-const DESTACADOS = ["pn45v", "ft2800"];
+const DESTACADOS = ["poleax", "sa232x"];
 
 const PRODUCTOS = [
     /* ---------------------------- FRIMED ---------------------------- */
@@ -257,6 +260,78 @@ const PRODUCTOS = [
             "Pantalla LED grande: temperatura programada, temperatura real, tiempo y fallas",
             "Sistema abierto: acepta tubo IV estándar, sin descartables especiales",
             "Autochequeos permanentes y operación continua las 24 horas. Soporte de infusión no incluido"
+        ]
+    },
+
+    /* ---------------------------- STURDY ---------------------------- */
+    {
+        id: "poleax",
+        categoria: "esterilizadores",
+        marca: "Sturdy",
+        modelo: "Serie Poleax",
+        modeloDetalle: "Serie Poleax · Modelos SA-230, SA-232 y SA-232V",
+        nombre: "Autoclave de Sobremesa Serie Poleax",
+        imagen: "images/productos/poleax.webp",
+        ficha: "assets/pdf/sturdy-poleax.pdf",
+        resumen: "Autoclaves compactos de 16 litros, con diseños de microprocesador y mecánico tradicional, que ahorran energía y agua y requieren poco mantenimiento. Sus paneles de control son simples, pensados para tareas básicas de esterilización.",
+        specs: [
+            ["Modelos", "SA-230 · SA-232 · SA-232V"],
+            ["Capacidad de la cámara", "16 litros"],
+            ["Tamaño de la cámara", "Ø 230 × 410 mm"],
+            ["Temperatura", "SA-230 y SA-232: 126 °C<br>SA-232V: 118 a 134 °C"],
+            ["Tiempo de esterilización", "SA-230: 0 a 60 min (perilla)<br>SA-232: 18 min sin envolver / 33 min envuelto<br>SA-232V: 4, 15 o 30 min"],
+            ["Dimensiones (An × Al × Pr)", "SA-230 y SA-232: 335 × 430 × 510 mm<br>SA-232V: 382 × 614 × 398 mm"],
+            ["Peso neto", "SA-230 y SA-232: 15.5 kg<br>SA-232V: 23.5 kg"],
+            ["Voltaje", "SA-230: 230 V<br>SA-232: 230 / 110 V<br>SA-232V: 230 V"],
+            ["Potencia", "SA-230: 1400 W (7 A)<br>SA-232: 1400 W (230 V) / 1200 W (110 V)<br>SA-232V: 1200 W (5.3 A)"],
+            ["Llenado de agua", "Manual, en cada sesión"],
+            ["Consumo de agua por ciclo", "SA-230 y SA-232: 350 a 400 cc<br>SA-232V: 300 a 450 cc"],
+            ["Tipo", "Sobremesa (SA-230, SA-232) · Vertical (SA-232V)"]
+        ],
+        caracteristicas: [
+            "Panel de control sencillo y mantenimiento fácil",
+            "Protección contra sobrecalentamiento y contra exceso de presión",
+            "Válvula de seguridad de presión",
+            "Manómetro de presión y temperatura al frente del equipo",
+            "SA-232 y SA-232V: luces indicadoras de cada fase del ciclo",
+            "SA-232V: bloqueo automático de puerta por presión (opcional)",
+            "Fabricados según 93/42/EEC (Clase IIB), 2014/68/EU (PED), EN 13060 e ISO 13485",
+            "El modelo SA-232X, con bloqueo de puerta y tanque de agua, tiene su propia ficha"
+        ]
+    },
+    {
+        id: "sa232x",
+        categoria: "esterilizadores",
+        marca: "Sturdy",
+        modelo: "SA-232X",
+        nombre: "Autoclave de Sobremesa con Microprocesador",
+        imagen: "images/productos/sa232x.webp",
+        ficha: "assets/pdf/sturdy-sa232x.pdf",
+        resumen: "Autoclave de sobremesa de 16 litros con control por microprocesador, panel simple, bloqueo automático de puerta por presión y tanque de agua integrado. Solo se rellena el agua, se elige el programa y se inicia el ciclo.",
+        specs: [
+            ["Sistema de control", "Microprocesador"],
+            ["Volumen de la cámara", "16 litros (4.2 galones)"],
+            ["Tamaño de la cámara", "Ø 230 × 410 mm"],
+            ["Dimensiones (An × Al × Pr)", "501 × 406 × 537 mm"],
+            ["Peso neto", "28 kg"],
+            ["Temperatura", "118 a 134 °C"],
+            ["Tiempo de esterilización", "4 / 15 / 30 min"],
+            ["Programas", "121 °C (1.2 bar): 30 min envuelto · 15 min sin envolver<br>134 °C (2.1 bar): 15 min envuelto · 4 min sin envolver"],
+            ["Llenado de agua", "Tank-Man: tanque de 4200 cc; la perilla se abre y cierra manualmente para llenar la cámara"],
+            ["Consumo de agua por ciclo", "300 a 450 cc"],
+            ["Voltaje", "230 V / 110 V, 50/60 Hz"],
+            ["Potencia sin secado (estándar)", "6.1 A / 1400 W (230 V)<br>11 A / 1200 W (110 V)"],
+            ["Potencia con secado (opcional)", "7.7 A / 1763 W (230 V)<br>14.2 A / 1563 W (110 V)"],
+            ["Secado (opcional)", "Escape y drenaje automático, secado a puerta cerrada con bomba de aire. Tiempo de secado: 18 min"]
+        ],
+        caracteristicas: [
+            "Control simple: se rellena el agua, se elige el programa y el ciclo se realiza de forma automática",
+            "Luces indicadoras de cada fase y aviso cuando la esterilización se completa",
+            "Bloqueo automático de puerta por presión y cierre de seguridad en la puerta",
+            "Protección contra sobrecalentamiento (corta la electricidad) y contra exceso de presión",
+            "Opcionales: escape y drenaje automático, secado a puerta cerrada (mejora la eficiencia del secado en un 90 %) y filtro de aire HEPA (retiene el 99.97 % de las partículas)",
+            "Accesorios: canasta, juego de bandejas, caja, bolsas de esterilización, filtro de agua RO, destilador de agua y Cham-Mate",
+            "Cumple CE, PED 2014/68/EU, EN 61010-1, EN 61010-2-040, EN 61326-1, ISO 13485 y RoHS"
         ]
     }
 ];

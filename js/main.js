@@ -1,9 +1,9 @@
 /* ==========================================================================
    MEDICAL STORE PERÚ - Lógica del sitio
-   Requiere cargar antes:  js/productos-data.js
+   Requiere cargar antes:  js/productos-data.js (en todas las páginas)
    ========================================================================== */
 
-const WHATSAPP_NUMERO = "51974467392";
+const WHATSAPP_NUMERO = "51942736112";
 
 /* --------------------------------------------------------------------------
    Utilidades
@@ -15,6 +15,16 @@ function enlaceWhatsApp(mensaje) {
 function buscarProducto(id) {
     return PRODUCTOS.find((p) => p.id === id);
 }
+
+/* --------------------------------------------------------------------------
+   Menú "Productos": se genera desde CATEGORIAS (js/productos-data.js),
+   así una categoría nueva aparece sola en el menú de todas las páginas.
+   -------------------------------------------------------------------------- */
+document.querySelectorAll(".dropdown-content").forEach((menu) => {
+    menu.innerHTML = Object.entries(CATEGORIAS)
+        .map(([clave, nombre]) => `<a href="productos.html#${clave}">${nombre}</a>`)
+        .join("");
+});
 
 /* --------------------------------------------------------------------------
    Cards de producto
@@ -51,7 +61,7 @@ function crearModalHTML(p) {
     return `
         <p class="modal-marca">${MOSTRAR_MARCA ? p.marca + " · " : ""}${CATEGORIAS[p.categoria]}</p>
         <h2>${p.nombre}</h2>
-        <p class="modal-modelo">Modelo ${p.modelo}</p>
+        <p class="modal-modelo">${p.modeloDetalle || "Modelo " + p.modelo}</p>
         <img class="modal-img" src="${p.imagen}" alt="${p.nombre} ${p.marca} ${p.modelo}">
         <p class="modal-resumen">${p.resumen}</p>
 
