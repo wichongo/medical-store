@@ -57,6 +57,7 @@ function crearCard(p) {
     return `
         <article class="card" data-category="${p.categoria}">
             <img src="${p.imagen}" alt="${p.nombre} ${p.marca} ${p.modelo}" loading="lazy">
+            <p class="card-category">${CATEGORIAS[p.categoria]}</p>
             <p class="card-marca">${etiqueta}</p>
             <h3>${p.nombre}</h3>
             <button class="btn" type="button" data-producto="${p.id}">Ver Detalles</button>
@@ -88,7 +89,7 @@ function crearModalHTML(p) {
         <img class="modal-img" src="${p.imagen}" alt="${p.nombre} ${p.marca} ${p.modelo}">
         <p class="modal-resumen">${p.resumen}</p>
 
-        <h3>Especificaciones técnicas</h3>
+        <h3>${p.tituloSpecs || "Especificaciones técnicas"}</h3>
         <table class="spec-table"><tbody>${specs}</tbody></table>
 
         <h3>Características</h3>
@@ -96,7 +97,7 @@ function crearModalHTML(p) {
 
         <div class="btn-center">
             <a href="${p.ficha}" target="_blank" rel="noopener" class="btn">
-                <i class="fa-solid fa-file-pdf"></i> Ver ficha técnica (PDF)
+                <i class="fa-solid fa-file-pdf"></i> ${p.etiquetaFicha || "Ver ficha técnica (PDF)"}
             </a>
             <a href="${enlaceWhatsApp(mensaje)}" target="_blank" rel="noopener" class="btn secondary-dark">
                 <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp

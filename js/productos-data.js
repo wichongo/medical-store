@@ -18,7 +18,8 @@
 const CATEGORIAS = {
     refrigeracion: "Refrigeración",
     calentadores: "Calentadores de Sangre",
-    esterilizadores: "Esterilizadores de sobremesa"
+    esterilizadores: "Esterilizadores de sobremesa",
+    "tecnologia-informacion": "Tecnología de la Información"
 };
 
 /* true  = las cards y el modal muestran la marca (ej. "Frimed · PN45V")
@@ -332,6 +333,107 @@ const PRODUCTOS = [
             "Opcionales: escape y drenaje automático, secado a puerta cerrada (mejora la eficiencia del secado en un 90 %) y filtro de aire HEPA (retiene el 99.97 % de las partículas)",
             "Accesorios: canasta, juego de bandejas, caja, bolsas de esterilización, filtro de agua RO, destilador de agua y Cham-Mate",
             "Cumple CE, PED 2014/68/EU, EN 61010-1, EN 61010-2-040, EN 61326-1, ISO 13485 y RoHS"
+        ]
+    },
+
+    /* Soluciones Novarad descritas en los folletos suministrados. */
+    {
+        "id": "novapacs",
+        "categoria": "tecnologia-informacion",
+        "marca": "Novarad",
+        "modelo": "NovaPACS",
+        "modeloDetalle": "Software de imagenología médica",
+        "nombre": "Sistema PACS para Imágenes Médicas",
+        "imagen": "images/productos/novapacs.jpg",
+        "ficha": "assets/pdf/novarad-novapacs.pdf",
+        "tituloSpecs": "Funciones de la solución",
+        "etiquetaFicha": "Ver folleto (PDF)",
+        "resumen": "NovaPACS es una solución de imagenología para visualizar, interpretar y comparar estudios médicos. Ofrece flujos de trabajo personalizables y opciones de almacenamiento adaptables a las necesidades de hospitales y centros de diagnóstico.",
+        "specs": [
+            [
+                "Visualización",
+                "Ecografías, rayos X, TC, RM y TEP"
+            ],
+            [
+                "Procesamiento",
+                "Herramientas de manipulación de imágenes y procesamiento mediante GPU"
+            ],
+            [
+                "Visualización avanzada",
+                "Herramientas 3D y 4D, MPR/MIP y fusión de imágenes"
+            ],
+            [
+                "Acceso web",
+                "Visor HTML5 y funciones de lectura, dictado e informes basados en la web"
+            ],
+            [
+                "Almacenamiento",
+                "Opciones locales, externas, híbridas, virtualizadas y en la nube"
+            ],
+            [
+                "Mamografía",
+                "Módulo opcional de visualización y protocolos para mamografía y tomosíntesis"
+            ]
+        ],
+        "caracteristicas": [
+            "Listas y flujos de trabajo personalizables para radiología",
+            "Enrutamiento inteligente con Intellirouting y gestión remota de preferencias",
+            "Herramientas de medición, anotación y comparación de imágenes",
+            "Automatización de tareas como sincronización de series, ajuste de tamaño y cine",
+            "Herramientas de control de calidad y revisión por colegas",
+            "Intercambio de imágenes e información con médicos dentro y fuera del centro"
+        ]
+    },
+    {
+        "id": "novaris",
+        "categoria": "tecnologia-informacion",
+        "marca": "Novarad",
+        "modelo": "Nova RIS",
+        "modeloDetalle": "Software de gestión de radiología",
+        "nombre": "Sistema de Información Radiológica RIS",
+        "imagen": "images/productos/novaris.jpg",
+        "ficha": "assets/pdf/novarad-novaris.pdf",
+        "tituloSpecs": "Funciones de la solución",
+        "etiquetaFicha": "Ver folleto (PDF)",
+        "resumen": "Nova RIS ayuda a organizar el recorrido del paciente y los flujos de trabajo del departamento de radiología, desde la programación de citas hasta la distribución de resultados. Integra herramientas de coordinación, informes y análisis de gestión.",
+        "specs": [
+            [
+                "Programación",
+                "Solicitud de citas por el paciente y recordatorios configurables"
+            ],
+            [
+                "Integración",
+                "Sincronización entre RIS, PACS, modalidad y sistema financiero"
+            ],
+            [
+                "Interoperabilidad",
+                "HL7 bidireccional e integración con historias clínicas electrónicas"
+            ],
+            [
+                "Informes",
+                "Herramientas de transcripción, dictado y reconocimiento de voz"
+            ],
+            [
+                "Distribución de resultados",
+                "Impresión, fax, correo electrónico, mensajes de texto o HCE mediante HL7"
+            ],
+            [
+                "Gestión",
+                "Análisis de procedimientos, productividad y médicos remitentes"
+            ],
+            [
+                "Opcionales",
+                "CryptoChart, AlertView, formularios electrónicos personalizados y gestión de facturación financiera"
+            ]
+        ],
+        "caracteristicas": [
+            "Lista de trabajo de modalidad incorporada",
+            "Alertas para contraindicaciones, procedimientos no programados, preautorizaciones y estudios urgentes",
+            "Portal para médicos remitentes con acceso a imágenes e informes y herramientas de programación",
+            "Interfaz basada en la web para gestionar el flujo de trabajo de radiología",
+            "Codificación CPT e ICD-10 integrada",
+            "CryptoChart permite compartir imágenes e informes mediante código QR como opción adicional",
+            "AlertView ofrece alertas de texto seguras para teléfonos móviles como opción adicional"
         ]
     }
 ];

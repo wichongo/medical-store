@@ -1117,3 +1117,8 @@ nav a, .dropbtn { margin: 0; }
 }
 
 .map-link { display: block; padding: 14px 8px; color: #1c6ea4; text-align: center; font-weight: 600; }
+
+/* Con cinco filtros, la nueva categoría ocupa la última fila en móvil. */
+@media (max-width: 600px) {
+    .filtros .filtro-btn:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
