@@ -84,3 +84,38 @@ footer .footer-bottom{text-align:center}
 header .dropdown-content a{display:flex;align-items:center;gap:10px}
 .card .image-zoom img{display:block;height:240px;width:100%;max-width:280px;object-fit:contain;object-position:center;margin:0 auto 8px;padding:12px}
 @media(max-width:650px){.card .image-zoom img{height:230px}.filtro-btn .category-icon{width:18px;height:18px;flex-basis:18px}}
+
+/* Tarjetas compactas y última fila centrada sin estirar sus contenidos. */
+.products{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:24px}
+.products>.card{flex:0 0 calc((100% - 48px)/3);min-width:0}
+.products.teaser>.card{flex-basis:calc((100% - 24px)/2)}
+.card{padding:20px}
+.card .image-zoom span{padding-bottom:12px}
+.card .card-category{margin-bottom:8px}
+.card h3{margin-bottom:12px}
+.card .card-actions{gap:8px}
+.card .card-actions .btn[data-producto]{background:var(--accent);border-color:var(--accent);color:#fff}
+.card .card-actions .btn[data-producto]:hover{background:var(--ink);border-color:var(--ink)}
+.card .card-actions .quote-toggle{background:transparent;border-color:var(--line);color:var(--accent)}
+.card .card-actions .quote-toggle:hover,.card .card-actions .quote-toggle[aria-pressed="true"]{background:var(--paper);border-color:var(--accent)}
+@media(max-width:1000px){.products>.card{flex-basis:calc((100% - 24px)/2)}}
+@media(max-width:650px){.products,.products.teaser{gap:18px}.products>.card,.products.teaser>.card{flex-basis:100%}}
+
+/* Alturas uniformes y acciones alineadas, con la última fila centrada. */
+.products{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:1fr;align-items:stretch}
+.products>.card{grid-column:span 2}
+.card .card-actions{margin-top:auto}
+@media(min-width:1001px){
+ .products:not(.teaser)>.card:last-child:nth-child(3n+1){grid-column:3/span 2}
+ .products:not(.teaser)>.card:nth-last-child(2):nth-child(3n+1){grid-column:2/span 2}
+}
+.products.teaser{grid-template-columns:repeat(4,minmax(0,1fr))}
+.products.teaser>.card:last-child:nth-child(odd){grid-column:2/span 2}
+@media(min-width:651px) and (max-width:1000px){
+ .products{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .products>.card:last-child:nth-child(odd){grid-column:2/span 2}
+}
+@media(max-width:650px){
+ .products,.products.teaser{grid-template-columns:minmax(0,1fr)}
+ .products>.card,.products.teaser>.card:last-child:nth-child(odd){grid-column:1}
+}
