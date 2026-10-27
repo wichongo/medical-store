@@ -16,6 +16,8 @@
 /* Categorías (clave -> nombre visible). Las claves se usan en los filtros
    y en el menú "Productos" (productos.html#clave). */
 const CATEGORIAS = {
+    anestesia: "Anestesia",
+    laboratorio: "Laboratorio",
     refrigeracion: "Refrigeración",
     calentadores: "Calentadores de Sangre",
     esterilizadores: "Esterilizadores de sobremesa",
@@ -27,9 +29,99 @@ const CATEGORIAS = {
 const MOSTRAR_MARCA = true;
 
 /* IDs de los equipos que se muestran en "Productos Destacados" (inicio). */
-const DESTACADOS = ["poleax", "sa232x"];
+const DESTACADOS = ["ax500", "poleax"];
 
 const PRODUCTOS = [
+    {
+    "id": "d2mini",
+    "nuevo": true,
+    "nombre": "Sistema de identificación microbiana y antibiograma",
+    "marca": "DL Biotech",
+    "modelo": "D2 Mini",
+    "categoria": "laboratorio",
+    "imagen": "images/productos/dl-d2mini.png",
+    "ficha": "assets/pdf/dl-d2mini-ficha.pdf",
+    "catalogo": "assets/pdf/dl-d2mini-catalogo.pdf",
+    "etiquetaFicha": "Ficha técnica D2 Mini (PDF)",
+    "etiquetaCatalogo": "Folleto D2 Mini (PDF)",
+    "resumen": "Sistema de sobremesa para identificación microbiana y pruebas de susceptibilidad a antimicrobianos (ID/AST). Lee y analiza tarjetas para generar resultados de identificación, concentración mínima inhibitoria (MIC) e interpretación S/I/R.",
+    "specs": [
+        [
+            "Identificación",
+            "Colorimetría"
+        ],
+        [
+            "Susceptibilidad a antimicrobianos",
+            "Turbidimetría"
+        ],
+        [
+            "Capacidad de lectura",
+            "Al menos 50 tarjetas por hora"
+        ],
+        [
+            "Dimensiones con pantalla cerrada",
+            "215 × 258 × 215 mm"
+        ],
+        [
+            "Dimensiones con pantalla abierta",
+            "215 × 258 × 378 mm"
+        ],
+        [
+            "Peso neto",
+            "4,4 kg"
+        ],
+        [
+            "Alimentación",
+            "100–240 V CA, 50/60 Hz"
+        ],
+        [
+            "Condiciones de funcionamiento",
+            "5–30 °C; humedad relativa ≤80 %"
+        ],
+        [
+            "Muestreador automático",
+            "Opcional; 50 placas por hora según ficha técnica de 2025"
+        ]
+    ],
+    "caracteristicas": [
+        "Identificación de más de 500 microorganismos según la ficha técnica",
+        "Reportes con valores MIC e interpretación S/I/R",
+        "Seguimiento de mecanismos de resistencia como MRSA, VRE y ESBL",
+        "Formato de informe personalizable y funciones estadísticas",
+        "Soporte LIS y WHONET descrito en el folleto",
+        "Consultar las tarjetas, reactivos y accesorios incluidos en la configuración cotizada"
+    ]
+},
+    {
+        id: "ax500",
+        enPromocion: true,
+        nombre: "Máquina de Anestesia",
+        marca: "COMEN",
+        modelo: "AX-500",
+        categoria: "anestesia",
+        imagen: "images/productos/comen-ax500.png",
+        ficha: "assets/pdf/comen-ax500.pdf",
+        catalogo: "assets/pdf/comen-ax400-ax500-catalogo.pdf",
+        etiquetaFicha: "Ficha técnica AX-500 (PDF)",
+        resumen: "Equipo para anestesia perioperatoria con pantalla táctil TFT de 10,4 pulgadas y diseño modular. Consulta con nuestro equipo la configuración, accesorios y disponibilidad del AX-500.",
+        specs: [
+            ["Pantalla", "Táctil TFT de 10,4 pulgadas; 800 × 600 píxeles"],
+            ["Dimensiones", "678 × 580 × 1370 mm"],
+            ["Peso", "90 kg (configuración estándar)"],
+            ["Modos estándar", "Manual/Spont, VCV y PCV"],
+            ["Modos opcionales", "PRVC, SIMV-VC, SIMV-PC, SIMV-PRVC, CPAP/PSV, PSVPro; CPB opcional"],
+            ["Alimentación", "100–240 V CA, 50/60 Hz"],
+            ["Aplicación", "Anestesia perioperatoria"],
+            ["Monitorización modular", "BIS, gases anestésicos y CO₂: opcionales, según configuración"],
+            ["Evacuación de gases (AGSS)", "Opcional"]
+        ],
+        caracteristicas: [
+            "Interfaz disponible en español y otros idiomas",
+            "Medición de flujo mecánica",
+            "Absorbedor de CO₂ de 2000 ml con bypass estándar",
+            "Confirmar los módulos, vaporizadores y accesorios incluidos antes de cotizar"
+        ]
+    },
     /* ---------------------------- FRIMED ---------------------------- */
     {
         id: "pn45v",
@@ -180,7 +272,7 @@ const PRODUCTOS = [
         marca: "Keewell",
         modelo: "QW618",
         nombre: "Calentador de Sangre e Infusión",
-        imagen: "images/productos/qw618.webp",
+        imagen: "images/productos/qw618-oficial.jpg",
         ficha: "assets/pdf/keewell-qw618.pdf",
         resumen: "Calentador seco de sangre e infusiones para aplicaciones clínicas rutinarias y de gran volumen: transfusiones durante o después de una cirugía, emergencias y nutrición enteral/parenteral.",
         specs: [
@@ -209,7 +301,7 @@ const PRODUCTOS = [
         marca: "Keewell",
         modelo: "FT70",
         nombre: "Calentador de Fluidos",
-        imagen: "images/productos/ft70.webp",
+        imagen: "images/productos/ft70-oficial.jpg",
         ficha: "assets/pdf/keewell-ft70.pdf",
         resumen: "Calentador de fluidos económico y compacto para infusión rutinaria a flujo lento o medio, nutrición enteral y parenteral, e infusión en niños y neonatos.",
         specs: [
@@ -239,7 +331,7 @@ const PRODUCTOS = [
         marca: "Keewell",
         modelo: "FT2800",
         nombre: "Calentador de Sangre e Infusión de 2 Canales",
-        imagen: "images/productos/ft2800.webp",
+        imagen: "images/productos/ft2800-oficial.jpg",
         ficha: "assets/pdf/keewell-ft2800.pdf",
         resumen: "Calentador seco de alto rendimiento con dos canales independientes para fluidos de infusión, sangre y hemoderivados, líquidos de diálisis y soluciones de nutrición o enjuague.",
         specs: [

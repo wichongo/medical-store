@@ -23,3 +23,49 @@ footer .footer-bottom{display:block}footer p{font-size:.8rem}
 .teaser-productos{text-align:left}.teaser-productos h2,#productos h2{font-size:clamp(1.7rem,3vw,2.45rem);color:var(--ink);margin:0}
 #productos .card{text-align:left}#productos .card h3{color:var(--ink)}
 @media(max-width:650px){footer .footer-grid{flex-direction:column}.teaser-productos{padding:44px 0}}
+
+/* Búsqueda y preguntas frecuentes · octubre 2026 */
+.catalog-search{max-width:740px;margin:0 0 28px}.catalog-search label{display:block;font-weight:600;margin-bottom:10px}.search-row{display:flex;gap:12px}.search-row input{min-width:0;flex:1;width:100%;padding:14px 16px;font:inherit;color:var(--ink);background:var(--paper);border:1px solid #a6bdc7;border-radius:6px}.search-row .btn{flex-shrink:0}.catalog-search p,#resultados-busqueda{font-size:.8rem;color:var(--muted);margin:10px 0 20px}.empty-search{padding:32px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}.empty-search[hidden]{display:none}.empty-search h2{font-size:1.35rem}
+.faq-section{background:var(--paper)}.faq-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:64px}.faq-layout>div>p:not(.eyebrow){color:var(--muted)}.faq-list details{border-bottom:1px solid #ccdce3}.faq-list details:first-child{border-top:1px solid #ccdce3}.faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:18px;list-style:none;padding:22px 0;cursor:pointer;font-weight:600;font-size:.95rem}.faq-list summary::-webkit-details-marker{display:none}.faq-list summary::after{content:'+';font-size:1.4rem;color:var(--accent);flex-shrink:0}.faq-list details[open] summary::after{content:'−'}.faq-list details p{margin:0;padding:0 28px 22px 0;color:var(--muted);font-size:.88rem;overflow-wrap:anywhere}.faq-list a{color:var(--accent)}
+:where(a,button,input,summary):focus-visible{outline:3px solid #087da4;outline-offset:4px}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.card,.line-grid>a{transition:transform .2s ease,border-color .2s ease,background .2s ease}.card:hover{transform:translateY(-3px)}.line-grid>a:hover b svg{transform:translate(2px,-2px)}.line-grid b svg{transition:transform .2s ease}}
+@media(max-width:650px){.faq-layout{grid-template-columns:1fr;gap:24px}.faq-list summary{font-size:.9rem}.search-row{gap:8px}.search-row .btn{padding:12px;font-size:.8rem}.search-row input{font-size:16px;padding:12px}.empty-search{padding:22px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Fotos ampliables y cotización múltiple. */
+.image-zoom{display:block;width:100%;padding:0;border:0;background:white;color:var(--accent);cursor:zoom-in;font:inherit;text-align:center;border-radius:6px}.image-zoom span{display:block;font-size:.75rem;padding:0 0 16px}.card .image-zoom img{margin-bottom:8px}.card .quote-toggle{margin-top:10px}.quote-toggle[aria-pressed="true"]{background:var(--paper);border-color:var(--accent)}
+#foto-ampliada{position:fixed;inset:0;margin:auto;width:min(900px,94vw);max-height:92vh;border:0;border-radius:10px;padding:20px;overflow:auto}#foto-ampliada::backdrop{background:rgba(10,25,32,.8)}#foto-ampliada>button{display:block;margin-left:auto}#foto-ampliada>img{display:block;width:100%;height:65vh;object-fit:contain;background:white}#foto-ampliada>p{text-align:center;font-size:.9rem}
+.quote-summary{background:var(--paper);border-top:1px solid var(--line)}.quote-summary[hidden]{display:none}.quote-summary ul{list-style:none;padding:0}.quote-summary li{display:flex;gap:16px;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}.quote-summary li button{border:1px solid var(--line);background:white;color:var(--accent);padding:12px;border-radius:6px;cursor:pointer}.quote-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.quote-summary p{font-size:.85rem}@media(max-width:650px){.quote-actions>*{width:100%;text-align:center}#foto-ampliada{padding:12px}.quote-summary li{font-size:.85rem}}
+.quote-access{position:fixed;bottom:22px;left:18px;z-index:50;max-width:calc(100vw - 115px);text-decoration:none;box-shadow:0 3px 15px #193a4a30}.quote-access[hidden]{display:none}.quote-summary{scroll-margin-top:160px;padding-bottom:100px}
+
+footer .social-instagram{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:6px 0;font-size:.85rem;text-decoration:none}footer .social-instagram svg{flex-shrink:0}footer .social-instagram:hover span{text-decoration:underline}
+
+.product-image-note{font-size:.7rem;color:var(--muted);line-height:1.5;margin:0 0 14px}.equipment-spotlight figcaption{gap:12px;flex-wrap:wrap}.equipment-spotlight figcaption .btn{font-size:.8rem;padding:12px}
+
+/* Promoción AX-500: condiciones confirmadas; disponibilidad actualizada manualmente. */
+.ax-promotion .promo-subtitle{font-size:1.4rem;margin:0 0 18px}.promo-price{font-size:clamp(2.6rem,5vw,4rem);font-weight:700;line-height:1.1;color:var(--accent)}.promo-tax{margin:8px 0 20px;color:var(--muted)}.promo-benefits{padding-left:22px;line-height:2}.promo-stock{display:inline-block;border:1px solid #b9d1da;border-radius:6px;padding:8px 14px;font-weight:600;margin-top:16px}.ax-promotion .equipment-spotlight{background:#fff;padding:20px}.ax-promotion .image-zoom img{width:100%;height:480px;object-fit:contain;display:block}.ax-promotion .promo-details{background:transparent;color:var(--accent)}.offer-card{border-top:1px solid var(--line);padding:16px 0;margin-bottom:18px}.offer-card strong{display:block;font-size:1.65rem;color:var(--accent)}.offer-card span{display:block;font-size:.8rem;color:var(--muted)}.offer-card p{font-size:.8rem;margin:10px 0}.ax-promotion .intro-actions{gap:12px}@media(max-width:650px){.ax-promotion .image-zoom img{height:320px}.ax-promotion .intro-copy h1{font-size:2.45rem}.ax-promotion .intro-actions>*{width:100%}}
+/* Seis líneas del catálogo: tres columnas en escritorio, dos en móvil. */
+.line-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.line-grid>a:first-child{padding-left:22px}.line-grid>a:nth-child(3n){border-right:0}.line-grid>a:nth-child(-n+3){border-bottom:1px solid var(--line)}
+@media(max-width:1000px){.line-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.line-grid>a:nth-child(3n){border-right:1px solid var(--line)}.line-grid>a:nth-child(2n){border-right:0}.line-grid>a:nth-child(-n+4){border-bottom:1px solid var(--line)}}
+@media(max-width:650px){.line-grid>a:first-child{padding-left:14px}}
+
+/* Tarjetas alineadas y ficha con imagen lateral. */
+.card{align-items:stretch}.card .card-marca{font-weight:700;color:var(--ink);font-size:.84rem;letter-spacing:.025em}.card .card-category{margin-bottom:12px}.card h3{margin-bottom:18px}.card .promo-stock{align-self:flex-start;margin:0 0 18px;font-size:.78rem}.card-actions{margin-top:auto;display:grid;gap:10px;padding-top:8px}.card .card-actions .btn{margin:0;width:100%;min-height:48px;display:flex;align-items:center;justify-content:center}
+.modal-content{max-width:1100px}.product-detail-layout{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);gap:32px;clear:both}.product-detail-info{grid-column:2;grid-row:1;min-width:0}.product-detail-photo{grid-column:1;grid-row:1;align-self:start;position:sticky;top:48px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:20px}.product-detail-photo .image-zoom{background:transparent}.product-detail-photo .modal-img{max-width:100%;height:340px;margin:0 auto 12px}.product-detail-info h2{font-size:1.55rem;line-height:1.3;padding-right:0}.product-detail-info .modal-resumen{margin-top:20px}.product-detail-info .btn-center{grid-template-columns:1fr}.product-detail-info .btn-center .btn{font-size:.85rem}
+@media(max-width:760px){.product-detail-layout{grid-template-columns:1fr;gap:24px}.product-detail-photo{grid-column:1;grid-row:1;position:static;padding:16px}.product-detail-info{grid-column:1;grid-row:2}.product-detail-photo .modal-img{height:220px}.product-detail-info h2{font-size:1.35rem}}
+
+/* Identidad centrada y estados comerciales diferenciados. */
+.card .card-marca{text-align:center;width:100%}
+.product-badge,.card .product-badge{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;width:fit-content;border-radius:999px;padding:7px 13px;font-size:.75rem;font-weight:700;line-height:1.3;margin:0 0 18px;border:1px solid currentColor}
+.badge-new{color:#126b80;background:#eaf7fb}.badge-promo{color:#926017;background:#fff5df}
+.product-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:none;animation:badge-pulse 2.4s ease-in-out infinite}
+@keyframes badge-pulse{0%,100%{box-shadow:0 0 0 0 transparent;opacity:.7}50%{box-shadow:0 0 0 4px color-mix(in srgb,currentColor 16%,transparent);opacity:1}}
+@media(prefers-reduced-motion:reduce){.product-badge::before{animation:none}}
+
+/* Etiquetas sobre las fotos y acciones más próximas al título. */
+.card-photo{position:relative;width:100%}.card-photo .product-badge,.product-detail-photo .product-badge{position:absolute;top:8px;left:8px;z-index:1;margin:0;pointer-events:none;box-shadow:0 2px 8px #0000000a}.badge-new{color:#176344;background:#e9f6ed}.card h3{margin-bottom:10px}.card-actions{margin-top:0;padding-top:0}.card{justify-content:flex-start}.product-detail-photo .product-badge{top:12px;left:12px}
+.card h3{flex-grow:0;text-align:center;width:100%}
+
+/* Categorías centradas y etiquetas contenidas en la foto también en móvil. */
+.card .card-category{text-align:center;width:100%}
+@media(max-width:760px){.product-detail-photo{position:relative;top:auto}}
