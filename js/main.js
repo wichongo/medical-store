@@ -21,9 +21,22 @@ function buscarProducto(id) {
    Menú "Productos": se genera desde CATEGORIAS (js/productos-data.js),
    así una categoría nueva aparece sola en el menú de todas las páginas.
    -------------------------------------------------------------------------- */
+function iconoCategoria(clave) {
+    const trazos = {
+        all: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
+        anestesia: '<rect x="4" y="3" width="12" height="10" rx="2"/><path d="M7 8h2l1-2 2 4 1-2h1M10 13v6M5 21v-2h12v2M16 7h3v9h-3"/>',
+        laboratorio: '<path d="M9 3h6M10 3v7L4 19a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2l-6-9V3M7 16h10"/>',
+        refrigeracion: '<rect x="5" y="2" width="14" height="20" rx="2"/><path d="M5 9h14M8 5v1M8 12v4"/>',
+        calentadores: '<path d="M12 2C10 6 5 10 5 15a7 7 0 0 0 14 0c0-5-5-9-7-13Z M9 15a3 3 0 0 0 3 3"/>',
+        esterilizadores: '<rect x="2" y="5" width="20" height="14" rx="3"/><circle cx="10" cy="12" r="4"/><path d="M18 9v1M18 14v1M5 19v2M19 19v2"/>',
+        'tecnologia-informacion': '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M6 10h3l2-3 3 6 2-3h2"/>'
+    };
+    return `<svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${trazos[clave] || trazos.all}</svg>`;
+}
+
 document.querySelectorAll(".dropdown-content").forEach((menu) => {
-    menu.innerHTML = '<a href="productos.html">Todos los productos</a>' + Object.entries(CATEGORIAS)
-        .map(([clave, nombre]) => `<a href="productos.html#${clave}">${nombre}</a>`)
+    menu.innerHTML = `<a href="productos.html">${iconoCategoria("all")}<span>Todos los productos</span></a>` + Object.entries(CATEGORIAS)
+        .map(([clave, nombre]) => `<a href="productos.html#${clave}">${iconoCategoria(clave)}<span>${nombre}</span></a>`)
         .join("");
 });
 
@@ -33,10 +46,20 @@ document.querySelectorAll('.dropdown').forEach((dropdown) => {
     const menu = dropdown.querySelector('.dropdown-content');
     let closeTimer;
     const hoverPointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const positionMenu = () => {
+        menu.style.removeProperty('--menu-offset');
+        if (window.innerWidth > 768 && !menu.hidden) {
+            const bounds = menu.getBoundingClientRect();
+            const overflow = Math.max(0, bounds.right - document.documentElement.clientWidth + 16);
+            menu.style.setProperty('--menu-offset', `${-overflow}px`);
+        }
+    };
+    window.addEventListener('resize', positionMenu);
     const setOpen = (open) => {
         clearTimeout(closeTimer);
         button.setAttribute('aria-expanded', String(open));
         menu.hidden = !open;
+        if (open) positionMenu();
     };
     // El ratón abre el menú; el toque y el teclado conservan el clic.
     dropdown.addEventListener('pointerenter', (event) => {
@@ -76,7 +99,7 @@ function crearCard(p) {
         <article class="card" data-category="${p.categoria}">
             <div class="card-photo">${p.enPromocion ? `<p class="promo-stock product-badge badge-promo">En promoción</p>` : p.nuevo ? `<p class="product-badge badge-new">Nuevo</p>` : ""}<button type="button" class="image-zoom" data-ampliar="${p.id}" aria-label="Ampliar foto de ${p.modelo}"><img src="${p.imagen}" alt="${p.nombre} ${p.marca} ${p.modelo}" loading="lazy"><span>Ampliar foto</span></button></div>
             ${p.notaImagen ? `<p class="product-image-note">${p.notaImagen}</p>` : ""}<p class="card-marca">${etiqueta}</p>
-            <p class="card-category">${CATEGORIAS[p.categoria]}</p>
+            <p class="card-category">${iconoCategoria(p.categoria)}<span>${CATEGORIAS[p.categoria]}</span></p>
             <h3>${p.nombre}</h3>
             <div class="card-actions"><button class="btn" type="button" data-producto="${p.id}">Ver Detalles</button><button class="btn quote-toggle" type="button" data-cotizar="${p.id}" aria-pressed="${seleccionCotizacion.has(p.id)}">${seleccionCotizacion.has(p.id) ? "Quitar de cotización" : "Añadir a cotización"}</button></div>
         </article>
@@ -211,7 +234,7 @@ if (contenedorCatalogo && contenedorFiltros) {
     });
     /* Botones generados desde CATEGORIAS */
     const botones = [["all", "Todos"], ...Object.entries(CATEGORIAS)]
-        .map(([clave, nombre]) => `<button class="filtro-btn" type="button" data-filter="${clave}">${nombre}</button>`)
+        .map(([clave, nombre]) => `<button class="filtro-btn" type="button" data-filter="${clave}">${iconoCategoria(clave)}<span>${nombre}</span></button>`)
         .join("");
     contenedorFiltros.innerHTML = botones;
 

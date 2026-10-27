@@ -69,3 +69,18 @@ footer .social-instagram{display:inline-flex;align-items:center;gap:10px;min-hei
 /* Categorías centradas y etiquetas contenidas en la foto también en móvil. */
 .card .card-category{text-align:center;width:100%}
 @media(max-width:760px){.product-detail-photo{position:relative;top:auto}}
+
+/* Despliegue desde Productos hacia la derecha en escritorio. */
+@media(min-width:769px){header .dropdown-content{left:var(--menu-offset,0px);right:auto}}
+
+/* Pie de página centrado en todas las pantallas. */
+footer .footer-bottom{text-align:center}
+
+/* Iconos vectoriales y encuadre uniforme del catálogo. */
+.category-icon{width:20px;height:20px;flex:0 0 20px;vertical-align:middle}
+.filtro-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.card .card-category{display:flex;align-items:center;justify-content:center;gap:6px}
+.card-category .category-icon{width:16px;height:16px;flex-basis:16px}
+header .dropdown-content a{display:flex;align-items:center;gap:10px}
+.card .image-zoom img{display:block;height:240px;width:100%;max-width:280px;object-fit:contain;object-position:center;margin:0 auto 8px;padding:12px}
+@media(max-width:650px){.card .image-zoom img{height:230px}.filtro-btn .category-icon{width:18px;height:18px;flex-basis:18px}}
