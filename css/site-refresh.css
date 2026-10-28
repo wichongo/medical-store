@@ -119,3 +119,54 @@ header .dropdown-content a{display:flex;align-items:center;gap:10px}
  .products,.products.teaser{grid-template-columns:minmax(0,1fr)}
  .products>.card,.products.teaser>.card:last-child:nth-child(odd){grid-column:1}
 }
+
+/* Lectura y distribución móvil: conservar el tamaño del texto entre orientaciones. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.intro-grid>*,.digital-grid>*,.faq-layout>*,.contact-grid>*,.footer-grid>*,.vision-mision>*{min-width:0}
+.about-text,.vm-card p,.intro-description,.page-intro,.faq-list details p,.modal-resumen{text-align:justify;text-align-last:left;-webkit-hyphens:auto;hyphens:auto;overflow-wrap:break-word}
+footer .footer-grid{gap:32px 48px}
+footer .footer-grid>div{max-width:100%}
+footer .footer-grid p{margin:12px 0;line-height:1.8}
+.whatsapp-float{flex-shrink:0;line-height:1;transition:box-shadow .2s}
+.whatsapp-float svg{display:block;width:32px;height:32px;flex:none}
+@media(max-width:768px){
+ header .dropdown-content{max-height:calc(100vh - 180px);max-height:calc(100dvh - 180px);overflow-y:auto;overscroll-behavior:contain}
+}
+@media(max-width:650px){
+ header nav{gap:8px;width:100%;justify-content:space-between}
+ header nav>a,header .dropbtn{font-size:clamp(.8rem,3.8vw,1rem);min-height:44px;line-height:1.4}
+ .card{min-width:0;max-width:100%;height:auto}
+ .card h3,.card .card-marca,.card .card-category{overflow-wrap:break-word}
+ .card .card-actions .btn{white-space:normal;line-height:1.5}
+ footer .footer-grid{flex-direction:column;align-items:center;gap:26px;text-align:center}
+ footer .footer-grid>div{width:100%}
+ footer .footer-grid>div+div{border-top:1px solid var(--line);padding-top:24px}
+ footer .social-instagram{justify-content:center}
+ footer .footer-bottom{line-height:1.8;margin-top:28px;padding-top:24px}
+ footer{padding-bottom:100px;padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+ .whatsapp-float{right:16px;right:calc(16px + env(safe-area-inset-right,0px));bottom:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:52px;height:52px;transform:none}
+ .quote-access{bottom:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));font-size:.8rem}
+}
+
+/* Tema claro explícito y fotografías con una superficie uniforme. */
+:root{color-scheme:light only}
+.card-photo,.card-photo .image-zoom{background:#fff;border-radius:6px}
+.card-photo{padding-top:38px}
+.card .image-zoom img{padding:6px;height:240px;background:#fff}
+#foto-ampliada{background:#fff;color:var(--ink);padding:20px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px)}
+#foto-ampliada[open]{display:flex;flex-direction:column;gap:16px}
+#foto-ampliada>button{flex:none;align-self:flex-end;margin:0;min-height:44px;padding:10px 18px;font-size:.85rem}
+#foto-ampliada>img{flex:0 1 auto;min-height:0;height:60vh;height:60dvh;max-height:600px;object-fit:contain;background:#fff;border-radius:6px}
+#foto-ampliada>p{flex:none;margin:0;line-height:1.5;font-size:.85rem;overflow-wrap:break-word}
+@media(max-width:650px){
+ .card .image-zoom img{height:230px}
+ #foto-ampliada{padding:16px;width:calc(100% - 24px);gap:12px}
+ #foto-ampliada>img{height:52vh;height:52dvh}
+ #foto-ampliada>p{font-size:.8rem}
+}
+
+/* Menú móvil anclado al encabezado, incluso durante el desplazamiento. */
+@media(max-width:768px){
+ header .dropdown{position:static}
+ header .dropdown-content{position:absolute;top:100%;left:50%;right:auto;transform:translateX(-50%);margin-top:0;width:calc(100% - 32px);max-width:360px;max-height:calc(100vh - 190px);max-height:calc(100dvh - 190px);overflow-y:auto}
+}
